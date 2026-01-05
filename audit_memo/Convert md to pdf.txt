@@ -1,0 +1,18 @@
+สามารถแปลงเป็น PDF ได้หลายวิธี:
+วิธีที่ 1: ใช้ Pandoc (Recommended)
+
+pandoc AUDIT_MEMO.md -o report.pdf \
+  --pdf-engine=xelatex \
+  -V geometry:margin=1in \
+  -V fontsize=11pt \
+  -V mainfont="Arial"
+
+วิธีที่ 2: ใช้ VSCode Extension
+Install "Markdown PDF" extension
+เปิด AUDIT_MEMO.md
+Cmd+Shift+P → "Markdown PDF: Export (pdf)"
+
+วิธีที่ 3: ใช้ Online Tool
+Copy เนื้อหาจาก AUDIT_MEMO.md
+Paste ไปที่ https://md2pdf.netlify.app/
+Download PDF

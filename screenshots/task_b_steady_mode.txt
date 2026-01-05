@@ -1,0 +1,66 @@
+================================================================================
+TASK B: STEADY MODE (Normal streaming rate)
+Started: 2026-01-05 21:00:35
+================================================================================
+
+ Network kafka_lab_default  Creating
+ Network kafka_lab_default  Created
+ Container kafka  Creating
+ Container kafka  Created
+ Container kafka_lab-kafka-init-1  Creating
+ Container kafka_lab-kafka-init-1  Created
+ Container kafka  Starting
+ Container kafka  Started
+ Container kafka_lab-kafka-init-1  Starting
+ Container kafka_lab-kafka-init-1  Started
+⏳ Waiting for Kafka to be ready (20 seconds)...
+ Container kafka  Running
+ Container kafka_lab-producer-1  Creating
+ Container kafka_lab-producer-1  Created
+ Container kafka_lab-kafka-init-1  Starting
+ Container kafka_lab-kafka-init-1  Started
+ Container kafka_lab-producer-1  Starting
+ Container kafka_lab-producer-1  Started
+⏳ Waiting for producer to stream (50 seconds to reach ~Batch 100)...
+
+================================================================================
+📊 PRODUCER OUTPUT (Last 50 lines)
+================================================================================
+producer-1  | [producer] Connecting to Kafka at kafka:9092...
+producer-1  | [producer] ✅ Connected to Kafka
+producer-1  | ================================================================================
+producer-1  | ENHANCED KAFKA PRODUCER
+producer-1  | ================================================================================
+producer-1  | Bootstrap: kafka:9092
+producer-1  | Topic: transactions
+producer-1  | CSV: /work/data/creditcard.csv
+producer-1  | Mode: STEADY
+producer-1  | ================================================================================
+producer-1  | [producer] Loaded 283,726 records after deduplication
+producer-1  | [producer] Mode: STEADY
+producer-1  | [producer] Batch size: 500, Sleep: 250ms, Speed: 1.0x
+producer-1  | [producer] Batch 20/568 | Rate: 1412.9 msg/s
+producer-1  | [producer] Batch 40/568 | Rate: 1420.8 msg/s
+producer-1  | [producer] Batch 60/568 | Rate: 1419.9 msg/s
+producer-1  | [producer] Batch 80/568 | Rate: 1420.6 msg/s
+producer-1  | [producer] Batch 100/568 | Rate: 1452.6 msg/s
+producer-1  | [producer] Batch 120/568 | Rate: 1381.7 msg/s
+ Container kafka_lab-producer-1  Stopping
+ Container kafka_lab-producer-1  Stopped
+ Container kafka_lab-producer-1  Removing
+ Container kafka_lab-producer-1  Removed
+ Container kafka_lab-kafka-init-1  Stopping
+ Container kafka_lab-kafka-init-1  Stopped
+ Container kafka_lab-kafka-init-1  Removing
+ Container kafka_lab-kafka-init-1  Removed
+ Container kafka  Stopping
+ Container kafka  Stopped
+ Container kafka  Removing
+ Container kafka  Removed
+ Network kafka_lab_default  Removing
+ Network kafka_lab_default  Removed
+
+================================================================================
+Completed: 2026-01-05 21:01:49
+Started:   2026-01-05 21:00:35
+================================================================================

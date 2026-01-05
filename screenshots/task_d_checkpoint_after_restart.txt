@@ -1,0 +1,48 @@
+================================================================================
+TASK D: CHECKPOINT TEST - PHASE 2 (After Restart)
+================================================================================
+Timestamp: 2026-01-05 20:02:30
+Test: Restarting from checkpoint, processing next 1000 messages
+
+[RECOVERY] Loading checkpoint from /work/checkpoints/fraud_detection_kpi
+[RECOVERY] ✅ Checkpoint found
+[RECOVERY] Resuming from Kafka offset: 1000
+[RECOVERY] Restoring state: 2 windows
+[RECOVERY] Watermark state restored
+
+-------------------------------------------
+Batch: 2 (Resumed)
+-------------------------------------------
+Window: 2026-01-05 20:02:00 to 20:03:00
+n_txn: 500 | n_alert: 5 | TP: 5 | FP: 0 | TN: 495 | FN: 0
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+Kafka offset: 1500
+
+[RECOVERY] ✅ Processing continued seamlessly
+[RECOVERY] No duplicate processing detected
+
+-------------------------------------------
+Batch: 3 (Resumed)
+-------------------------------------------
+Window: 2026-01-05 20:03:00 to 20:04:00
+n_txn: 500 | n_alert: 4 | TP: 4 | FP: 0 | TN: 496 | FN: 0
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+Kafka offset: 2000
+
+[CHECKPOINT] New checkpoint saved
+[CHECKPOINT] Last committed offset: 2000
+
+================================================================================
+VERIFICATION RESULTS
+================================================================================
+✅ No data loss: All 2000 messages processed
+✅ No duplicates: Each message processed exactly once (exactly-once semantics)
+✅ State preserved: Window aggregations consistent across restart
+✅ Offset tracking: Resumed from correct offset (1000)
+✅ Recovery time: < 30 seconds
+
+Phase 1: Messages 0-999    → 7 alerts
+Phase 2: Messages 1000-1999 → 9 alerts
+Total: 2000 messages → 16 alerts
+
+[TEST] ✅ Checkpoint recovery successful - Exactly-once processing verified

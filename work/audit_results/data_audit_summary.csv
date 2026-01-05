@@ -1,0 +1,12 @@
+Metric,Value
+Total Rows (Original),"284,807"
+Total Columns,31
+Duplicates Found,"1,081"
+Duplicates %,0.3796%
+Rows After Dedup,"283,726"
+Missing Values,0
+Class 0 Count,"283,253"
+Class 0 %,99.8333%
+Class 1 Count,473
+Class 1 %,0.1667%
+Imbalance Ratio (0:1),598.84:1

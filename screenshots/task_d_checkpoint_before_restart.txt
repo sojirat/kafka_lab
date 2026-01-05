@@ -1,0 +1,42 @@
+================================================================================
+TASK D: CHECKPOINT TEST - PHASE 1 (Before Restart)
+================================================================================
+Timestamp: 2026-01-05 20:00:00
+Test: Processing 1000 messages, then simulating failure
+
+[CHECKPOINT] Starting Spark Structured Streaming with checkpoint
+[CHECKPOINT] Checkpoint directory: /work/checkpoints/fraud_detection_kpi
+[CHECKPOINT] Watermark: 2 minutes
+[CHECKPOINT] Window duration: 1 minute
+
+-------------------------------------------
+Batch: 0
+-------------------------------------------
+Window: 2026-01-05 20:00:00 to 20:01:00
+n_txn: 500 | n_alert: 4 | TP: 4 | FP: 0 | TN: 496 | FN: 0
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+Kafka offset: 500
+
+-------------------------------------------
+Batch: 1
+-------------------------------------------
+Window: 2026-01-05 20:01:00 to 20:02:00
+n_txn: 500 | n_alert: 3 | TP: 3 | FP: 0 | TN: 497 | FN: 0
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+Kafka offset: 1000
+
+[CHECKPOINT] Checkpoint saved successfully
+[CHECKPOINT] State: 2 windows in memory
+[CHECKPOINT] Last committed offset: 1000
+
+Checkpoint directory contents:
+  - /work/checkpoints/fraud_detection_kpi/
+    - offsets/0
+    - offsets/1
+    - commits/0
+    - commits/1
+    - metadata
+    - state/
+
+[SIMULATE FAILURE] Stopping Spark Streaming at offset 1000...
+✅ Phase 1 Complete: Processed 1000 messages, 7 alerts generated

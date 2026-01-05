@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+work/checkpoints/
+work/output_alerts/
+
+data/
+work/data/
+**/creditcard.csv
+
+
+.claude/
+.env

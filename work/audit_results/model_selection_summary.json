@@ -1,0 +1,12 @@
+{
+  "selected_model": "Random Forest",
+  "pr_auc": 0.7841079778074498,
+  "recommended_threshold": 0.5,
+  "precision_at_threshold": 0.83,
+  "recall_at_threshold": 0.7685185185185185,
+  "f1_at_threshold": 0.798076923076923,
+  "model_comparison": {
+    "logistic_regression_pr_auc": 0.6322384540979766,
+    "random_forest_pr_auc": 0.7841079778074498
+  }
+}

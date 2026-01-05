@@ -1,0 +1,73 @@
+================================================================================
+TASK B: BURST MODE (High traffic bursts)
+Started: 2026-01-05 21:01:49
+================================================================================
+
+ Network kafka_lab_default  Creating
+ Network kafka_lab_default  Created
+ Container kafka  Creating
+ Container kafka  Created
+ Container kafka_lab-kafka-init-1  Creating
+ Container kafka_lab-kafka-init-1  Created
+ Container kafka  Starting
+ Container kafka  Started
+ Container kafka_lab-kafka-init-1  Starting
+ Container kafka_lab-kafka-init-1  Started
+⏳ Waiting for Kafka to be ready (20 seconds)...
+ Container kafka  Running
+ Container kafka_lab-producer-1  Creating
+ Container kafka_lab-producer-1  Created
+ Container kafka_lab-kafka-init-1  Starting
+ Container kafka_lab-kafka-init-1  Started
+ Container kafka_lab-producer-1  Starting
+ Container kafka_lab-producer-1  Started
+⏳ Waiting for producer to stream (50 seconds to capture multiple cycles)...
+
+================================================================================
+📊 PRODUCER OUTPUT (Last 50 lines)
+================================================================================
+producer-1  | [producer] Connecting to Kafka at kafka:9092...
+producer-1  | [producer] ✅ Connected to Kafka
+producer-1  | ================================================================================
+producer-1  | ENHANCED KAFKA PRODUCER
+producer-1  | ================================================================================
+producer-1  | Bootstrap: kafka:9092
+producer-1  | Topic: transactions
+producer-1  | CSV: /work/data/creditcard.csv
+producer-1  | Mode: BURST
+producer-1  | ================================================================================
+producer-1  | [producer] Loaded 283,726 records after deduplication
+producer-1  | [producer] Mode: BURST
+producer-1  | [producer] Burst ON: 2000ms, OFF: 10000ms
+producer-1  | [producer] Burst batch size: 2000
+producer-1  | [producer] Cycle 1 - BURST ON (2.0s)
+producer-1  | [producer] Burst phase: 14000 records | Rate: 6503.7 msg/s
+producer-1  | [producer] Cycle 1 - QUIET PERIOD (10.0s)
+producer-1  | [producer] Cycle 2 - BURST ON (2.0s)
+producer-1  | [producer] Burst phase: 14000 records | Rate: 6941.7 msg/s
+producer-1  | [producer] Cycle 2 - QUIET PERIOD (10.0s)
+producer-1  | [producer] Cycle 3 - BURST ON (2.0s)
+producer-1  | [producer] Burst phase: 16000 records | Rate: 6958.5 msg/s
+producer-1  | [producer] Cycle 3 - QUIET PERIOD (10.0s)
+producer-1  | [producer] Cycle 4 - BURST ON (2.0s)
+producer-1  | [producer] Burst phase: 14000 records | Rate: 6486.9 msg/s
+producer-1  | [producer] Cycle 4 - QUIET PERIOD (10.0s)
+ Container kafka_lab-producer-1  Stopping
+ Container kafka_lab-producer-1  Stopped
+ Container kafka_lab-producer-1  Removing
+ Container kafka_lab-producer-1  Removed
+ Container kafka_lab-kafka-init-1  Stopping
+ Container kafka_lab-kafka-init-1  Stopped
+ Container kafka_lab-kafka-init-1  Removing
+ Container kafka_lab-kafka-init-1  Removed
+ Container kafka  Stopping
+ Container kafka  Stopped
+ Container kafka  Removing
+ Container kafka  Removed
+ Network kafka_lab_default  Removing
+ Network kafka_lab_default  Removed
+
+================================================================================
+Completed: 2026-01-05 21:03:03
+Started:   2026-01-05 21:01:49
+================================================================================
