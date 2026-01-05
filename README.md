@@ -5,10 +5,12 @@ Real-time fraud detection system using Apache Kafka and Spark Structured Streami
 
 ## ⚙️ Environment Configuration
 
-After cloning this project, create your environment file by copying from `.env.example`:
+### After cloning this project, Copy external file `creditcard.csv` file into folder `data/creditcard.csv` and `work/data/creditcard.csv`
 
+### And create your environment file by copying from `.env.example`:
 ```bash
 cp .env.example .env
+```
 
 ## 🚀 Quick Start (One Command)
 
